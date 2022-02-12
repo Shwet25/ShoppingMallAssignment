@@ -11,8 +11,5 @@ paths.post('/register', shoppingMallController_1.default.register);
 paths.post('/login', shoppingMallController_1.default.login);
 paths.post('/validate', shoppingMallController_1.default.validate);
 paths.get('/employees', shoppingMallController_1.default.employees);
-// paths.get('/read', crud.read);
-// paths.put('/update', crud.update);
-// paths.delete('/delete', crud.delete);
-// paths.get('/test',crud.test)
-// module.exports=paths;
+paths.put('/update', shoppingMallController_1.default.update);
+paths.delete('/delete', shoppingMallController_1.default.delete);

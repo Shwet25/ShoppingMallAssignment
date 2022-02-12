@@ -81,7 +81,7 @@ class shoppingMallController {
                     res.status(200).json({
                         "payload": [
                             {
-                                "Message": `Logged in successfully with id ${email} `,
+                                "Message": `Logged in successfully with email id:  ${email} `,
                                 "Token": `${token}`
                             }
                         ],
@@ -127,6 +127,85 @@ class shoppingMallController {
             }
             catch (e) {
                 console.log(e);
+            }
+        });
+    }
+    static update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let name = req.body.name;
+                let email = req.body.email;
+                let phone = req.body.phone;
+                let password = req.body.password;
+                const find = yield (0, db_1.default)(`select * from employee where email='${email}'`);
+                if (find.rowCount == 0) {
+                    res.status(404).json({
+                        "payload": [
+                            {
+                                "Message": "Employee Not Found"
+                            }
+                        ],
+                        "errors": [],
+                        "success": false
+                    });
+                }
+                else {
+                    if (name == undefined || name == "" || name == null) {
+                        name = find.rows[0].name;
+                    }
+                    if (phone == undefined || phone == "" || phone == null) {
+                        phone = find.rows[0].phone;
+                    }
+                    if (password == undefined || password == "" || password == null) {
+                        password = find.rows[0].password;
+                    }
+                    yield (0, db_1.default)(`update employee set name='${name}', phone='${phone}', password='${password}' where email='${email}'`);
+                    res.status(200).json({
+                        "payload": [
+                            {
+                                "Message": "Employee Updated"
+                            }
+                        ],
+                        "errors": [],
+                        "success": true
+                    });
+                }
+            }
+            catch (e) {
+                console.log(e);
+            }
+        });
+    }
+    static delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let email = req.body.email;
+                const find = yield (0, db_1.default)(`select * from employee where email='${email}'`);
+                if (find.rowCount == 0) {
+                    res.status(404).json({
+                        "payload": [
+                            {
+                                "Message": "Employee Does Not Exist"
+                            }
+                        ],
+                        "errors": [],
+                        "success": false
+                    });
+                }
+                else {
+                    yield (0, db_1.default)(`delete from employee where email='${email}'`);
+                    res.status(200).json({
+                        "payload": [
+                            {
+                                "Message": `Employee deleted successfully with email id:  ${email} `,
+                            }
+                        ],
+                        "errors": [],
+                        "success": true
+                    });
+                }
+            }
+            catch (e) {
             }
         });
     }

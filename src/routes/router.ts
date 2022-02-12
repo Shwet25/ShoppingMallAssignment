@@ -7,12 +7,7 @@ export default paths = express.Router();
 paths.post('/register', shoppingMallController.register);
 paths.post('/login', shoppingMallController.login);
 paths.post('/validate', shoppingMallController.validate);
-paths.get('/employees',shoppingMallController.employees)
+paths.get('/employees', shoppingMallController.employees);
+paths.put('/update', shoppingMallController.update);
+paths.delete('/delete', shoppingMallController.delete);
 
-// paths.get('/read', crud.read);
-// paths.put('/update', crud.update);
-// paths.delete('/delete', crud.delete);
-
-// paths.get('/test',crud.test)
-
-// module.exports=paths;
