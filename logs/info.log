@@ -1,0 +1,8 @@
+{"code":"42P01","file":"parse_relation.c","length":108,"level":"error","line":"1384","name":"error","position":"15","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42601","file":"scan.l","length":90,"level":"error","line":"1180","name":"error","position":"66","routine":"scanner_yyerror","severity":"ERROR"}
+{"code":"42P01","file":"parse_relation.c","length":108,"level":"error","line":"1384","name":"error","position":"15","routine":"parserOpenTable","severity":"ERROR"}
