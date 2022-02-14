@@ -9,11 +9,11 @@ import signToken from "../helpers/jwt"
 export default class shoppingMallController {
     static async register(req: Request, res: Response) {
         try {
-            let name: any = req.body.name;
-            let email: any = req.body.email;
-            let phone: any = req.body.phone;
-            let nationalid: any = req.body.nationalid;
-            let password: any = req.body.password;
+            let name: String = req.body.name;
+            let email: String = req.body.email;
+            let phone: String = req.body.phone;
+            let nationalid: String = req.body.nationalid;
+            let password: String = req.body.password;
 
             const find = await query(`select * from employee where email='${email}'`)
 
@@ -52,8 +52,8 @@ export default class shoppingMallController {
 
     static async login(req: Request, res: Response) {
         try {
-            let email: any = req.body.email;
-            let password: any = req.body.password;
+            let email: String = req.body.email;
+            let password: String = req.body.password;
 
             const find = await query(`select * from employee where email='${email}' and password='${password}'`);
 
@@ -100,9 +100,9 @@ export default class shoppingMallController {
 
     static async validate(req: Request, res: Response) {
         try {
-            let email: any = req.body.email;
-            let phone: any = req.body.phone;
-            let nationalid: any = req.body.nationalid;
+            let email: String = req.body.email;
+            let phone: String = req.body.phone;
+            let nationalid: String = req.body.nationalid;
 
             const find = await query(`select * from employee where email='${email}' and phone='${phone}' and nationalid='${nationalid}'`);
 
@@ -142,10 +142,10 @@ export default class shoppingMallController {
 
     static async update(req: Request, res: Response) {
         try {
-            let name: any = req.body.name;
-            let email: any = req.body.email;
-            let phone: any = req.body.phone;
-            let password: any = req.body.password;
+            let name: String = req.body.name;
+            let email: String = req.body.email;
+            let phone: String = req.body.phone;
+            let password: String = req.body.password;
 
             const find = await query(`select * from employee where email='${email}'`);
 
@@ -198,7 +198,7 @@ export default class shoppingMallController {
 
     static async delete(req: Request, res: Response) {
         try {
-            let email = req.body.email;
+            let email:String = req.body.email;
             const find = await query(`select * from employee where email='${email}'`);
 
             if (find.rowCount == 0) {
