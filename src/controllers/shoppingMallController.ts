@@ -46,7 +46,7 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            console.log(e)
+            logger.error(e)
         }
     }
 
@@ -94,7 +94,7 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            console.log(e)
+            logger.error(e)
         }
     }
 
@@ -136,7 +136,7 @@ export default class shoppingMallController {
 
         }
         catch (e) {
-            console.log(e);
+            logger.error(e)
         }
     }
 
@@ -190,7 +190,7 @@ export default class shoppingMallController {
             }
 
         } catch (e) {
-            console.log(e)
+            logger.error(e)
         }
 
 
@@ -234,7 +234,7 @@ export default class shoppingMallController {
 
             }
         } catch (e) {
-
+            logger.error(e)
         }
     }
 
@@ -270,7 +270,7 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            console.log(e);
+            logger.error(e)
         }
     }
 }

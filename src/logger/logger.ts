@@ -1,19 +1,46 @@
-const {transports,createLogger} = require('winston')
+import winston from "winston";
 
-const logConfiguration:any = {
-  // format:format.printf(info => `[${Date()}],[${info.level.toUpperCase()}],[${path.basename(__filename)}],${info.message}`),
-  transports: [
-    new transports.File({
-      level: 'error',
-      filename: 'logs/error.log'
-    }),
-    new transports.File({
-        level: 'info',
-        filename: 'logs/info.log'
-      })
-  ]
-};
+// import appRoot from "app-root-path";
 
-const logger:any = createLogger(logConfiguration);
+// const appRoot : any = require('app-root-path');
+
+const levels = {
+  error: 0,
+  warn: 1,
+  info: 2,
+  http: 3,
+  debug: 4,
+}
+
+
+
+const level = () => {
+  const env = 'development' // can be changes to prod
+  const isDevelopment = env === 'development'
+  return isDevelopment ? 'debug' : 'warn'
+}
+
+const format = winston.format.combine(
+  winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
+  winston.format.printf(
+    (info) => `${info.timestamp} ${info.level}: ${info.message}`,
+  ),
+)
+
+const transports = [
+  new winston.transports.Console(),
+  new winston.transports.File({
+    filename: 'logs/error.log',
+    level: 'error',
+  }),
+  new winston.transports.File({ filename: 'logs/all.log' }),
+]
+
+const logger = winston.createLogger({
+  level: level(),
+  levels,
+  format,
+  transports,
+})
 
 export default logger;
