@@ -12,10 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// import client from "../db/db";
 const db_1 = __importDefault(require("../db/db"));
+const logger_1 = __importDefault(require("../logger/logger"));
 const jwt_1 = __importDefault(require("../helpers/jwt"));
-// var read: any;
 class shoppingMallController {
     static register(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -51,7 +50,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
-                console.log(e);
+                logger_1.default.error(e);
             }
         });
     }
@@ -91,7 +90,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
-                console.log(e);
+                logger_1.default.error(e);
             }
         });
     }
@@ -126,7 +125,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
-                console.log(e);
+                logger_1.default.error(e);
             }
         });
     }
@@ -172,7 +171,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
-                console.log(e);
+                logger_1.default.error(e);
             }
         });
     }
@@ -206,6 +205,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
+                logger_1.default.error(e);
             }
         });
     }
@@ -238,7 +238,7 @@ class shoppingMallController {
                 }
             }
             catch (e) {
-                console.log(e);
+                logger_1.default.error(e);
             }
         });
     }

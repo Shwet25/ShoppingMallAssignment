@@ -44,14 +44,4 @@ function query(queryText) {
         }
     });
 }
-// import { env } from "process";
-// const Pool = require('pg').Pool
-// // const pool = new Pool({
-// //   user: env.DB_USER || 'postgres',
-// //   password: env.DB_PASSWORD || 'postgres',
-// //   database: env.DB_NAME || 'config',
-// //   host: env.DB_HOST || 'localhost',
-// //   port: env.DB_PORT || '5432'
-// // })
-// // const client =pool.connect();
 exports.default = query;
