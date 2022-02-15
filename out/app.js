@@ -8,10 +8,20 @@ if (process.env.NODE_ENV !== "production") {
 }
 const express_1 = __importDefault(require("express"));
 const index_1 = __importDefault(require("./routes/index"));
+const error_1 = __importDefault(require("./helpers/error"));
 const app = (0, express_1.default)();
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use("/", index_1.default);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Listening at : http://localhost:${PORT}`);
+});
+app.get('/test', (req, res) => {
+    try {
+        let temp = req.query.temp;
+        res.send(temp);
+    }
+    catch (err) {
+        error_1.default.errors(err, req, res);
+    }
 });

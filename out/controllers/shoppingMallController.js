@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = __importDefault(require("../db/db"));
 const logger_1 = __importDefault(require("../logger/logger"));
 const jwt_1 = __importDefault(require("../helpers/jwt"));
+const error_1 = __importDefault(require("../helpers/error"));
 class shoppingMallController {
     static register(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -51,6 +52,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                error_1.default.errors(e, req, res);
             }
         });
     }

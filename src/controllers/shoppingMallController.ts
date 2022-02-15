@@ -3,7 +3,9 @@ import { Response, Request } from "express"
 import query from "../db/db";
 import logger from "../logger/logger";
 
-import signToken from "../helpers/jwt"
+import signToken from "../helpers/jwt";
+
+import Errors from "../helpers/error";
 
 
 export default class shoppingMallController {
@@ -46,7 +48,8 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
     }
 
@@ -94,7 +97,8 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
     }
 
@@ -136,7 +140,8 @@ export default class shoppingMallController {
 
         }
         catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
     }
 
@@ -190,7 +195,8 @@ export default class shoppingMallController {
             }
 
         } catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
 
 
@@ -234,7 +240,8 @@ export default class shoppingMallController {
 
             }
         } catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
     }
 
@@ -270,7 +277,8 @@ export default class shoppingMallController {
                 })
             }
         } catch (e) {
-            logger.error(e)
+            logger.error(e);
+            Errors.errors(e,req,res);
         }
     }
 }
