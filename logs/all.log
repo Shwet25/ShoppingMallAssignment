@@ -1,2 +1,12 @@
 2022-02-15 16:10:57:1057 error: duplicate key value violates unique constraint "customers_un"
 2022-02-15 16:11:49:1149 error: duplicate key value violates unique constraint "customers_un"
+2022-02-17 12:27:29:2729 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:05:33:533 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:08:56:856 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:10:35:1035 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:11:50:1150 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:14:17:1417 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:15:53:1553 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 11:22:46:2246 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 14:35:48:3548 error: duplicate key value violates unique constraint "customers_un"
+2022-02-21 14:35:48:3548 error: Error Occured

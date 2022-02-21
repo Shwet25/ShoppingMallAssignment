@@ -5,10 +5,12 @@ import logger from "../logger/logger";
 
 import signToken from "../helpers/jwt";
 
-import Errors from "../helpers/error";
-
+import MyError from "../helpers/error";
 
 export default class shoppingMallController {
+
+
+
     static async register(req: Request, res: Response) {
         try {
             let name: String = req.body.name;
@@ -33,23 +35,37 @@ export default class shoppingMallController {
 
                 })
             } else {
-                await query(`insert into employee values ('${name}','${email}','${phone}','${nationalid}','${password}')`)
-                res.status(200).json({
-                    "payload": [
-                        {
-                            "Message": "Employee Added Successfully"
-                        }
-                    ],
-                    "errors": [
 
-                    ],
-                    "success": true
+                const insert = await query(`insert into employee values ('${name}','${email}','${phone}','${nationalid}','${password}')`)
+                // console.log(insert);
+                if (insert != undefined) {
+                    res.status(200).json({
+                        "payload": [
+                            {
+                                "Message": "Employee Added Successfully"
+                            }
+                        ],
+                        "errors": [
 
-                })
+                        ],
+                        "success": true
+
+                    })
+                }
+                else{
+                    throw new MyError("Error Occured")
+                }
+
             }
         } catch (e) {
+            // let e1 = new Errors(e);
+            // res.send("error")
+            if(e instanceof MyError){
+                res.send(e.message)
+            }
             logger.error(e);
-            Errors.errors(e,req,res);
+            // e1.errors();
+
         }
     }
 
@@ -98,7 +114,7 @@ export default class shoppingMallController {
             }
         } catch (e) {
             logger.error(e);
-            Errors.errors(e,req,res);
+            // Errors.errors(e,req,res);
         }
     }
 
@@ -141,7 +157,7 @@ export default class shoppingMallController {
         }
         catch (e) {
             logger.error(e);
-            Errors.errors(e,req,res);
+            // Errors.errors(e,req,res);
         }
     }
 
@@ -196,7 +212,7 @@ export default class shoppingMallController {
 
         } catch (e) {
             logger.error(e);
-            Errors.errors(e,req,res);
+            // Errors.errors(e,req,res);
         }
 
 
@@ -204,7 +220,7 @@ export default class shoppingMallController {
 
     static async delete(req: Request, res: Response) {
         try {
-            let email:String = req.body.email;
+            let email: String = req.body.email;
             const find = await query(`select * from employee where email='${email}'`);
 
             if (find.rowCount == 0) {
@@ -228,7 +244,7 @@ export default class shoppingMallController {
                     "payload": [
                         {
                             "Message": `Employee deleted successfully with email id:  ${email} `,
-                            
+
                         }
                     ],
                     "errors": [
@@ -241,7 +257,7 @@ export default class shoppingMallController {
             }
         } catch (e) {
             logger.error(e);
-            Errors.errors(e,req,res);
+            // Errors.errors(e,req,res);
         }
     }
 
@@ -278,7 +294,7 @@ export default class shoppingMallController {
             }
         } catch (e) {
             logger.error(e);
-            Errors.errors(e,req,res);
+            // Errors.errors(e,req,res);
         }
     }
 }

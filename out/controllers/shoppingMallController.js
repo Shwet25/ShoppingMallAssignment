@@ -38,21 +38,32 @@ class shoppingMallController {
                     });
                 }
                 else {
-                    yield (0, db_1.default)(`insert into employee values ('${name}','${email}','${phone}','${nationalid}','${password}')`);
-                    res.status(200).json({
-                        "payload": [
-                            {
-                                "Message": "Employee Added Successfully"
-                            }
-                        ],
-                        "errors": [],
-                        "success": true
-                    });
+                    const insert = yield (0, db_1.default)(`insert into employee values ('${name}','${email}','${phone}','${nationalid}','${password}')`);
+                    // console.log(insert);
+                    if (insert != undefined) {
+                        res.status(200).json({
+                            "payload": [
+                                {
+                                    "Message": "Employee Added Successfully"
+                                }
+                            ],
+                            "errors": [],
+                            "success": true
+                        });
+                    }
+                    else {
+                        throw new error_1.default("Error Occured");
+                    }
                 }
             }
             catch (e) {
+                // let e1 = new Errors(e);
+                // res.send("error")
+                if (e instanceof error_1.default) {
+                    res.send(e.message);
+                }
                 logger_1.default.error(e);
-                error_1.default.errors(e, req, res);
+                // e1.errors();
             }
         });
     }
@@ -93,6 +104,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                // Errors.errors(e,req,res);
             }
         });
     }
@@ -128,6 +140,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                // Errors.errors(e,req,res);
             }
         });
     }
@@ -174,6 +187,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                // Errors.errors(e,req,res);
             }
         });
     }
@@ -208,6 +222,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                // Errors.errors(e,req,res);
             }
         });
     }
@@ -241,6 +256,7 @@ class shoppingMallController {
             }
             catch (e) {
                 logger_1.default.error(e);
+                // Errors.errors(e,req,res);
             }
         });
     }

@@ -1,19 +1,34 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-class Errors {
-    static errors(err, req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            res.status(err.statusCode).send(err.message);
-        });
+class MyError extends Error {
+    constructor(message) {
+        super(message);
+        Object.setPrototypeOf(this, MyError.prototype);
     }
 }
-exports.default = Errors;
+exports.default = MyError;
+// export default class Errors {
+//     err:any;
+//     // req:any;
+//     // res:any;
+//     constructor(err: any){
+//         this.err=err;
+//         // this.req=req;
+//         // this.res=res;
+//         let responseObj:Object={"Error Message": this.err.message};
+//         console.log(responseObj);
+//     }
+// errors=()=>{
+//     this.res.status(this.err.statusCode).send(this.err.message);
+// }
+// function errors() {
+//     res.status(err.statusCode).send(err.message)
+// }
+//  errors= (err: any, req: any, res: any)  =>  {
+//     res.status(err.statusCode).send(err.message)
+// }
+// static async errors(err: any, req: any, res: any) {
+//     res.status(err.statusCode).send(err.message)
+// }
+// }
+// module.exports={}
