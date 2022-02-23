@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 const express_1 = __importDefault(require("express"));
 const index_1 = __importDefault(require("./routes/index"));
+// import Errors from "./helpers/error"
 const app = (0, express_1.default)();
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use("/", index_1.default);

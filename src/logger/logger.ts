@@ -13,7 +13,6 @@ const levels = {
 }
 
 
-
 const level = () => {
   const env = 'development' // can be changes to prod
   const isDevelopment = env === 'development'
@@ -28,7 +27,7 @@ const format = winston.format.combine(
 )
 
 const transports = [
-  new winston.transports.Console(),
+  // new winston.transports.Console(),
   new winston.transports.File({
     filename: 'logs/error.log',
     level: 'error',

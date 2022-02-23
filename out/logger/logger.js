@@ -20,7 +20,7 @@ const level = () => {
 };
 const format = winston_1.default.format.combine(winston_1.default.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }), winston_1.default.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`));
 const transports = [
-    new winston_1.default.transports.Console(),
+    // new winston.transports.Console(),
     new winston_1.default.transports.File({
         filename: 'logs/error.log',
         level: 'error',

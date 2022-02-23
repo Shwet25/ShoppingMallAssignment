@@ -1,12 +1,12 @@
-2022-02-15 16:10:57:1057 error: duplicate key value violates unique constraint "customers_un"
-2022-02-15 16:11:49:1149 error: duplicate key value violates unique constraint "customers_un"
-2022-02-17 12:27:29:2729 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:05:33:533 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:08:56:856 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:10:35:1035 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:11:50:1150 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:14:17:1417 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:15:53:1553 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 11:22:46:2246 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 14:35:48:3548 error: duplicate key value violates unique constraint "customers_un"
-2022-02-21 14:35:48:3548 error: Error Occured
+2022-02-23 10:30:57:3057 error: duplicate key value violates unique constraint "customers_un"
+2022-02-23 10:30:57:3057 error: Unique Key Violation. Please enter Unique values for phone number and national id
+2022-02-23 10:34:29:3429 error: duplicate key value violates unique constraint "customers_un"
+2022-02-23 10:34:29:3429 error: Unique Key Violation. Please enter Unique values for phone number and national id
+2022-02-23 10:34:37:3437 error: duplicate key value violates unique constraint "customers_un"
+2022-02-23 10:34:37:3437 error: Unique Key Violation. Please enter Unique values for phone number and national id
+2022-02-23 10:34:44:3444 error: Primary Key Violation. Please try with another email id as this email id already has an account
+2022-02-23 10:35:04:354 error: Employee does not exist. Please signup for login with this email id
+2022-02-23 10:43:32:4332 error: Invalid Password. Your password should be of more than 8 characters
+2022-02-23 10:51:01:511 error: Invalid Employee Details. Please try again by providing correct credentials
+2022-02-23 10:51:22:5122 error: Invalid Employee Details. Please try again by providing correct credentials
+2022-02-23 10:51:37:5137 error: Employee does not exist. Please signup to login with this email id
