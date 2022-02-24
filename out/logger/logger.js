@@ -25,7 +25,7 @@ const transports = [
         filename: 'logs/error.log',
         level: 'error',
     }),
-    new winston_1.default.transports.File({ filename: 'logs/all.log' }),
+    // new winston.transports.File({ filename: 'logs/all.log' }),
 ];
 const logger = winston_1.default.createLogger({
     level: level(),
